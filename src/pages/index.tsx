@@ -1,6 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 import Head from "next/head";
-import logoImg from "../../public/logo.svg";
+import loginImg from "../../public/login.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { AuthContext } from "@/contexts/AuthContext";
@@ -8,7 +8,29 @@ import { toast } from "react-toastify";
 import { canSSRGuest } from "@/utils/canSSRGuest";
 
 //custom components login page
-import { Box, BoxLogin, BoxLeftSignIn, BoxRightSignIn } from "./style";
+import {
+	Box,
+	BoxLogin,
+	BoxLeftSignIn,
+	BoxRightSignIn,
+	Row,
+	Form,
+	Button,
+	OptionLogin,
+	TextRecovery,
+} from "./style";
+import {
+	FormControl,
+	FormControlLabel,
+	IconButton,
+	InputAdornment,
+	InputLabel,
+	OutlinedInput,
+	Radio,
+	RadioGroup,
+} from "@mui/material";
+
+import { IconUser, IconLock } from "@tabler/icons-react";
 
 export default function Home() {
 	const { signIn } = useContext(AuthContext);
@@ -45,7 +67,82 @@ export default function Home() {
 			<Box>
 				<BoxLogin>
 					<BoxLeftSignIn></BoxLeftSignIn>
-					<BoxRightSignIn></BoxRightSignIn>
+					<BoxRightSignIn>
+						<Form onSubmit={handleLogin}>
+							<Row>
+								<Image
+									src={loginImg}
+									width={229}
+									height={321}
+									alt="Login"
+								></Image>
+							</Row>
+							<Row>
+								<FormControl variant="outlined" fullWidth>
+									<InputLabel htmlFor="outlined-adornment-password">
+										E-mail
+									</InputLabel>
+									<OutlinedInput
+										id="outlined-adornment-password"
+										type="text"
+										startAdornment={
+											<InputAdornment position="start">
+												<IconUser />
+											</InputAdornment>
+										}
+										onChange={(e) => setEmail(e.target.value)}
+									/>
+								</FormControl>
+							</Row>
+							<Row>
+								<FormControl variant="outlined" fullWidth>
+									<InputLabel htmlFor="outlined-adornment-password">
+										Senha
+									</InputLabel>
+									<OutlinedInput
+										id="outlined-adornment-password"
+										type="password"
+										startAdornment={
+											<InputAdornment position="start">
+												<IconLock />
+											</InputAdornment>
+										}
+										onChange={(e) => setPassword(e.target.value)}
+									/>
+								</FormControl>
+							</Row>
+							<Row>
+								<OptionLogin>Selecione a base de dados</OptionLogin>
+							</Row>
+							<Row>
+								<FormControl>
+									<RadioGroup
+										row
+										aria-labelledby="demo-row-radio-buttons-group-label"
+										name="row-radio-buttons-group"
+										defaultValue="api"
+									>
+										<FormControlLabel
+											value="api"
+											control={<Radio size="small" />}
+											label="Sigae CMM"
+										/>
+										<FormControlLabel
+											value="ad"
+											control={<Radio size="small" />}
+											label="Sigae AD"
+										/>
+									</RadioGroup>
+								</FormControl>
+							</Row>
+							<Row>
+								<Button type="submit">Entrar</Button>
+							</Row>
+							<Row>
+								<TextRecovery>Esqueci minha senha</TextRecovery>
+							</Row>
+						</Form>
+					</BoxRightSignIn>
 				</BoxLogin>
 			</Box>
 		</>

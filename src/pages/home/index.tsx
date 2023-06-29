@@ -24,14 +24,14 @@ export default function Dashboard({ mural }: HomeProps) {
 	);
 }
 
-export const getServerSideProps = canSSRAuth(async (context: any) => {
-	const apiClient = setupAPIClient(context);
+// export const getServerSideProps = canSSRAuth(async (context: any) => {
+// 	const apiClient = setupAPIClient(context);
 
-	const response = await apiClient.get("/mural");
+// 	const response = await apiClient.get("/mural");
 
-	return {
-		props: {
-			mural: response.data,
-		},
-	};
-});
+// 	return {
+// 		props: {
+// 			mural: response.data,
+// 		},
+// 	};
+// });

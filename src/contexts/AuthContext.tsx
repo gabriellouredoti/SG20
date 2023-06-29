@@ -95,10 +95,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
 			// Passar para as proximas requisicoes o token
 			api.defaults.headers["authorization"] = `Bearer ${token}`;
 
-			toast.success("Login realizado com sucesso!");
+			toast.success("Login realizado com sucesso!", {
+				position: "top-right",
+				autoClose: 3000,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "colored",
+			});
 
-			// Redirect user /dashboard
-			Router.push("/dashboard");
+			// Redirect user /home
+			Router.push("/home");
 		} catch (err) {
 			toast.error("Erro ao acessar.");
 			console.log("ERRO AO ACESSAR ", err);
