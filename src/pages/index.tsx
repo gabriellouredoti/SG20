@@ -133,12 +133,22 @@ export default function Home() {
                                     >
                                         <FormControlLabel
                                             value="api"
-                                            control={<Radio size="small" />}
+                                            control={
+                                                <Radio
+                                                    size="small"
+                                                    color="secondary"
+                                                />
+                                            }
                                             label="Sigae CMM"
                                         />
                                         <FormControlLabel
                                             value="ad"
-                                            control={<Radio size="small" />}
+                                            control={
+                                                <Radio
+                                                    size="small"
+                                                    color="secondary"
+                                                />
+                                            }
                                             label="Sigae AD"
                                         />
                                     </RadioGroup>

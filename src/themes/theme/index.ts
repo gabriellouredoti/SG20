@@ -13,30 +13,35 @@ export const success = "#45A150";
 
 export const neutral = "#64748B";
 
+export const disabled = "#8A94AD";
+
 const styled_theme: Theme = {
-	color: {
-		primary: {
-			main: primary,
-		},
-		secondary: {
-			main: secondary,
-		},
-		warning: {
-			main: warning,
-		},
-		success: {
-			main: success,
-		},
-		error: {
-			main: error,
-		},
-		neutral: {
-			main: neutral,
-		},
-		teste: {
-			main: primary,
-		},
-	},
+    color: {
+        primary: {
+            main: primary,
+        },
+        secondary: {
+            main: secondary,
+        },
+        warning: {
+            main: warning,
+        },
+        success: {
+            main: success,
+        },
+        error: {
+            main: error,
+        },
+        neutral: {
+            main: neutral,
+        },
+        teste: {
+            main: primary,
+        },
+        disabled: {
+            main: disabled,
+        },
+    },
 };
 
 export default styled_theme;
