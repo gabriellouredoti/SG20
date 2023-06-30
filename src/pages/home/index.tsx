@@ -19,7 +19,7 @@ export default function Dashboard({ mural }: HomeProps) {
 			<Head>
 				<title>SIGAE 2.0 - Home</title>
 			</Head>
-			<div>Mural</div>
+			<div>Tela Home</div>
 		</>
 	);
 }

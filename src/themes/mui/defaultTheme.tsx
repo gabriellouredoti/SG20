@@ -1,6 +1,8 @@
-import { Lato } from "@next/font/google";
 import { createTheme } from "@mui/material/styles";
 import { PaletteColorOptions } from "@mui/material";
+
+import { fontStyles } from "../../styles/fonts";
+import theme from "../theme";
 
 // add new color in type PaletteColorOptions
 declare module "@mui/material/styles" {
@@ -9,62 +11,59 @@ declare module "@mui/material/styles" {
 	}
 }
 
-export const lato = Lato({
-	weight: ["300", "400", "700"],
-	subsets: ["latin"],
-	display: "swap",
-	fallback: ["Helvetica", "Arial", "sans-serif"],
-});
-
 const defaultTheme = createTheme({
 	palette: {
 		primary: {
-			main: "#232E78",
+			main: theme.color.primary.main,
 		},
 		secondary: {
-			main: "#0088BB",
+			main: theme.color.secondary.main,
 		},
 		error: {
-			main: "#E74F00",
+			main: theme.color.error.main,
 		},
 		warning: {
-			main: "#FFB000",
+			main: theme.color.warning.main,
 		},
 		success: {
-			main: "#45A150",
+			main: theme.color.success.main,
 		},
 		neutral: {
-			main: "#64748B",
+			main: theme.color.neutral.main,
 		},
 	},
 	typography: {
-		fontFamily: lato.style.fontFamily,
+		fontFamily: "Gotham Book",
 		h1: {
 			fontSize: "52px",
 			lineHeight: "16%",
-			color: "neutral",
+			color: theme.color.neutral.main,
 		},
 		h2: {
+			fontFamily: "Gotham Medium",
 			fontSize: "40px",
-			color: "neutral",
+			color: theme.color.neutral.main,
 			lineHeight: "16%",
 		},
 		h3: {
+			fontFamily: "Gotham Bold",
 			fontSize: "32px",
 			lineHeight: "16%",
-			color: "neutral",
+			color: theme.color.neutral.main,
 			fontWeight: "bold",
 		},
 		h4: {
+			fontFamily: "Gotham Bold",
 			fontSize: "26px",
 			lineHeight: "16%",
-			color: "neutral",
+			color: theme.color.neutral.main,
 			fontWeight: "bold",
 		},
 		h5: {
+			fontFamily: "Gotham Bold",
 			fontSize: "26px",
 			lineHeight: "16%",
-			color: "neutral",
+			color: theme.color.neutral.main,
 			fontWeight: "bold",
 		},
 	},

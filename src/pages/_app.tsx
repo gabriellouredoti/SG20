@@ -1,8 +1,9 @@
 import React, { PropsWithChildren, useContext } from "react";
 
 import { AuthProvider, AuthContext } from "@/contexts/AuthContext";
-import { Global } from "@emotion/react";
+import { Global, css } from "@emotion/react";
 import { global } from "../styles/global";
+import { fontStyles } from "@/styles/fonts";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
@@ -14,7 +15,7 @@ import { CssBaseline } from "@mui/material";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "@/utils/createEmotionCache";
 
-import defaultTheme from "../themes/defaultTheme";
+import defaultTheme from "../themes/mui/defaultTheme";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -30,6 +31,11 @@ export interface MyAppProps extends AppProps {
 	queryClient?: QueryClient;
 }
 
+const globalStyles = css`
+	${global}
+	${fontStyles}
+`;
+
 export default function App({
 	Component,
 	pageProps,
@@ -44,7 +50,7 @@ export default function App({
 						{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 						<CssBaseline />
 						{/* Use global styles emotion in application next js */}
-						<Global styles={global} />
+						<Global styles={globalStyles} />
 						<AuthWrapper>
 							<Component {...pageProps} />
 						</AuthWrapper>

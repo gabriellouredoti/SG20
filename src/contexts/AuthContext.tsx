@@ -110,7 +110,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 			Router.push("/home");
 		} catch (err) {
 			toast.error("Erro ao acessar.");
-			console.log("ERRO AO ACESSAR ", err);
 		}
 	}
 

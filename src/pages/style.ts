@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const Box = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -17,17 +16,21 @@ export const BoxLogin = styled.div`
 `;
 
 export const BoxLeftSignIn = styled.div`
-	flex: 2;
+	flex: 1.5;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	height: 100%;
 
-	background-image: url("../assets/img.png");
+	background: url("header-login.png"), url("circular-background.svg"),
+		linear-gradient(180deg, #232e78 0%, #2d3889 15%, #1e265f 68%, #12173c 100%);
+	background-position: top 60px left 67px, bottom left -50%, top left;
 	background-repeat: no-repeat;
-	background-position: center;
-
-	background-size: 50%;
+	padding: 50px;
 
 	@media (max-width: 800px) {
-		/* background-size: 50%; */
 		display: none;
 	}
 
@@ -35,9 +38,9 @@ export const BoxLeftSignIn = styled.div`
 		display: none;
 	}
 
-	background: transparent
+	/* background: transparent
 		linear-gradient(180deg, #232e78 0%, #2d3889 15%, #1e265f 68%, #12173c 100%)
-		0% 0% no-repeat padding-box;
+		0% 0% no-repeat padding-box; */
 `;
 
 export const BoxRightSignIn = styled.div`
@@ -70,7 +73,7 @@ export const Form = styled.form`
 
 export const Button = styled.button`
 	width: 100%;
-	background-color: #8a94ad;
+	background-color: #0088bb;
 	color: #ffffff;
 	opacity: 1;
 	border: none;
@@ -93,4 +96,25 @@ export const TextRecovery = styled.a`
 	font-size: 12px;
 	font-weight: bold;
 	text-decoration: underline;
+`;
+
+export const Mural = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 55%;
+	height: 65%;
+
+	@media (max-width: 800px) {
+		width: 80%;
+	}
+
+	@media (max-width: 600px) {
+		display: none;
+	}
+
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border-radius: 23px;
 `;
